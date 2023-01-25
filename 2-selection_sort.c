@@ -6,7 +6,7 @@
  * selection_sort- sorts integers according to selection algorithm
  * @array: array of integers
  * @size : size of an array
- */
+ **/
 
 void selection_sort(int *array, size_t size)
 
@@ -14,7 +14,7 @@ void selection_sort(int *array, size_t size)
 	unsigned int i;
 	unsigned int j, min_idx;
 
-	register int temp;
+	 int temp;
 
 	if (size < 2)
 		return;
@@ -22,6 +22,8 @@ void selection_sort(int *array, size_t size)
 	for (i = 0; i < size - 1 ; i++)
 
 	{
+		min_idx = i
+
 		for (j = i + 1; j < size - 1 - i; j++)
 		{
 			if (array[j] < array[min_idx])
@@ -34,5 +36,6 @@ void selection_sort(int *array, size_t size)
 		if (i != min_idx)
 			print_array(array, size);
 	}
+
 
 }
