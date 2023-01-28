@@ -45,7 +45,7 @@ void selection_sort(int *array, size_t size);
 
 void quick_sort(int *array, size_t size);
 
-void quick_recursion(int *array, int left, int right, size_t size);
+void quick_recursive_call(int *array, int left, int right, size_t size);
 
 int partition(int *array, int left, int right, size_t size);
 

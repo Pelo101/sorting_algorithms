@@ -2,23 +2,40 @@
 #include <stdio.h>
 
 /**
- *quick_sort - sorts all integers of array according to quick sort algorithm
+ *quick_sort- sorts all integers of array according to quick sort algorithm
  *@array: array of integers
  *@size : size of arrays
  **/
 
 void quick_sort(int *array, size_t size)
 
+{ 
+	if (size < 2)
+		return;
+
+	quick_recursive_call(array, 0, (int)size - 1, size);
+}
+
+/**
+ *quick_recursive_call - function that performs recursion on left and right indexes
+ *@array : array of integers
+ *@size : size of array
+ *@left : left index 
+ *@right: right index
+ */
+
+void quick_recursive_call(int *array,int left, int right, size_t size)
+
 {
 	int pivot;
 
-	if (low < high)
+	if (left < right)
 
 	{
 
-		pivot  = partition(array, low, high, size);
-		quick_sort(array, low, pivot - 1);
-		quick_sort(array, pivot + 1, hight);
+		pivot = partition(array, left, right, size);
+		quick_recursive_call(array, left, pivot - 1, size);
+		quick_recursive_call(array, pivot + 1, right, size);
 
 	}
 
@@ -31,18 +48,18 @@ void quick_sort(int *array, size_t size)
  * @low : index of integer smaller than pivot
  * @high : index of integers larger than pivot
  */
+int partition(int *array, int left, int right, size_t size)
 
-void partition(int *array, int low, int high, size_t size)
+{	int j, i;
 
-{	int i, j;
 	int temp;
 
-	int i = low - 1;
+	i = left - 1;
 
-	for (int j = low; j < high; j++)
+	for (j = left; j < right; j++)
 
 	{
-		if (array[j] < array[high])
+		if (array[j] < array[right])
 
 		{
 			i++;
@@ -62,12 +79,12 @@ void partition(int *array, int low, int high, size_t size)
 
 	}
 
-	if (array[high] < array[i + 1])
+	if (array[right] < array[i + 1])
 
 	{
-		temp = array[i + 1]
-		array[i + 1] = array[high]
-		array[high] = temp;
+		temp = array[i + 1];
+		array[i + 1] = array[right];
+		array[right] = temp;
 		print_array(array, size);
 
 	}
