@@ -9,7 +9,7 @@
 
 void quick_sort(int *array, size_t size)
 
-{ 
+{
 	if (size < 2)
 		return;
 
@@ -17,14 +17,14 @@ void quick_sort(int *array, size_t size)
 }
 
 /**
- *quick_recursive_call - function that performs recursion on left and right indexes
+ *quick_recursive_call - function that performs recursion on L and R indexes
  *@array : array of integers
  *@size : size of array
- *@left : left index 
+ *@left : left index
  *@right: right index
  */
 
-void quick_recursive_call(int *array,int left, int right, size_t size)
+void quick_recursive_call(int *array, int left, int right, size_t size)
 
 {
 	int pivot;
@@ -45,8 +45,9 @@ void quick_recursive_call(int *array,int left, int right, size_t size)
  *partition - searches for the pivot  point
  * @array : array of integers
  * @size :size of arrays
- * @low : index of integer smaller than pivot
- * @high : index of integers larger than pivot
+ * @left : index of integer smaller than pivot
+ * @right : index of integers larger than pivot
+ * Return: the position of piv element
  */
 int partition(int *array, int left, int right, size_t size)
 
